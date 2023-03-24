@@ -50,10 +50,10 @@ query = query.join(Publisher)
 if publisher_name.isnumeric():
     records = query.filter(Publisher.id == publisher_name)
     for r in records:
-        print(*r[1:])
+        print(f'{r.title} | {r.name} | {r.price} | {r.date_sale}')
 else:
     records = query.filter(Publisher.name == publisher_name)
     for r in records:
-        print(*r[1:])
+        print(f'{r.title} | {r.name} | {r.price} | {r.date_sale}')
 
 session.close()
